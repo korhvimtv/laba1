@@ -30,20 +30,6 @@
  */
 package demo.parallel;
 
-
-/**
- * A complex number is a number that can be expressed in the form a + b * i, where
- * a and b are real numbers and i is the imaginary unit, which satisfies the
- * equation i ^ 2 = -1. a is the real part and b is the imaginary part of the
- * complex number.
- * <p><i>
- * This source code is provided to illustrate the usage of a given feature
- * or technique and has been deliberately simplified. Additional steps
- * required for a production-quality application, such as security checks,
- * input validation and proper error handling, might not be present in
- * this sample code.</i>
- * @author Alexander Kouznetsov, Tristan Yan
- */
 public class Complex {
     
     private double re;   // the real part
@@ -92,5 +78,49 @@ public class Complex {
     */
     public double lengthSQ() {
         return re * re + im * im;
+    }
+
+    // ================= New operations =================
+
+    /**
+     * Subtract operation.
+     * @param b subtrahend
+     * @return this Complex object whose value is (this - b)
+     */
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+
+    /**
+     * Conjugate of complex number
+     * @return this Complex object whose value is conjugate of original
+     */
+    public Complex conjugate() {
+        im = -im;
+        return this;
+    }
+
+    /**
+     * Reciprocal of complex number
+     * @return this Complex object whose value is 1 / this
+     */
+    public Complex reciprocal() {
+        double scale = re * re + im * im;
+        double real = re / scale;
+        double imag = -im / scale;
+        re = real;
+        im = imag;
+        return this;
+    }
+
+    /**
+     * Divide by another complex number
+     * @param b divisor
+     * @return this Complex object whose value is this / b
+     */
+    public Complex divide(Complex b) {
+        return this.times(new Complex(b.re, b.im).reciprocal());
     }
 }
