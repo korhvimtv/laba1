@@ -44,15 +44,15 @@
 }
 
 .progress-indicator {
-    -fx-progress-color: red;    
+    -fx-progress-color: rgb(60, 255, 0);    
 }
 
 .progress-indicator .percentage {
-    -fx-fill: white;
+    -fx-fill: rgb(0, 4, 255);
 }
 
 .label {
-    -fx-text-fill: white;
+    -fx-text-fill: rgb(255, 238, 0);
 }
 
 #spacer {
@@ -71,7 +71,7 @@
 }
 
 #open-close-toggle-button:hover {
-    -fx-background-color: lightgray;
+    -fx-background-color: rgb(255, 0, 170);
 }
 
 .time .bar {
@@ -80,5 +80,5 @@
 }
 
 .time .track {
-    -fx-background-color: black;
+    -fx-background-color: rgb(0, 17, 255);
 }
