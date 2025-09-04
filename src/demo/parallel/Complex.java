@@ -123,4 +123,12 @@ public class Complex {
     public Complex divide(Complex b) {
         return this.times(new Complex(b.re, b.im).reciprocal());
     }
+
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
+    }
 }
